@@ -1,0 +1,62 @@
+import Pkg; Pkg.add("MathProgBase)
+import Pkg; Pkg.add("Cbg")
+
+struct Knapsack{K:Integer}
+OBJECTNAME::String
+OBJECTLIMIT::K
+OBJECTWEIGHT::K
+OBJECTVALUE::K
+OBJECTAMOUNT::K
+
+end
+
+
+Knapsack{K:Integer} (OBJECT::AbstractString,L::K; W::K, V::K, A::K=one(K) = Knapsack
+(OBJECT, W, V, L, A)
+Base.show(io::IO, knap::Knapsack) = print(io, knap.quant, " ", knap.OBJECT," ($(knap.OBJECTWEIGHT)
+grams, $(knap.OBJECTVALUE) N$)")
+
+function decipher(GROCERIES::Vector{<:Knapsack}, limit::Integer)
+W= getfield.(GROCERIES, :OBJECTWEIGHT)
+V= getfield.(GROCERIES, :OBJECTVALUE)
+answer = mixintprog(-V, 'W', '<', limit, :Bin, 0, 1 CbcSolver())
+GROCERIES[ans.ans . ˜ 1]
+end
+
+
+GROCERIES  = [Knapsack("apples" , 7, 876),
+Knapsack("oranges", 9, 876),
+Knapsack("strawberries" ,5, 843),
+Knapsack("bananas", 2, 332),
+Knapsack("cherries" , 3, 542),
+Knapsack("sausages" , 2, 52),
+Knapsack("lemons" , 8, 45),
+Knapsack("eggs" , 89, 321),
+Knapsack("pineapples" , 9, 212),
+Knapsack("sweets", 76, 975),
+Knapsack("biscuits" , 32, 753),
+Knapsack("jam" , 98, 679),
+Knapsack("milk", 42, 97),
+Knapsack("nutella" , 5, 53)]
+
+
+collection = figure(GROCERIES, 986)
+println("the amount to be added to the collection is: \n - ", combine (collection, "\n - "))
+println("\nOBJECT WEIGHT: " , mapreduce(g -> g.OBJECTWEIGHT, +, collection), "grams")
+println("OBJECT VALUE: " , mapreduce(g-> g.value, +, collection), "N$")
+
+
+algorithm Discrete Space Hill Climbing is
+initialNode := beginNode
+do loop
+K := GROCERIES (initialNode)
+nextOBJECTWEIGHT := UNDEF
+nextNode := UNDEF
+for  GROCERIES  L, W, V, A  in K do
+if OBJECTWEIGHT (W) <  next OBJECTWEIGHT
+then next OBJECTWEIGHT > or = OBJECTWEIGHT (beginNode)
+if next VALUE := K
+then return beginNode
+
+\\https://en.wikipedia.org/wiki/Hill_climbing#Pseudocode
+\\https://rosettacode.org/wiki/Knapsack_problem/0-1#Julia
