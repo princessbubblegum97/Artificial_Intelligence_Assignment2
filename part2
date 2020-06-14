@@ -20,32 +20,32 @@ julia> successor_state = 8
 
 julia>utility_value = 50
 
-julia> function minimax(initial_state) 
+julia> function minimax(original_state) 
 
-return  successor_state
+return  next_state
 
-julia> function bestvalue(initial_state)
+julia> function bestvalue(original_state)
 return utility_value
 if terminal_test 
 then return utility_state
 
-julia> function worstvalue(initial_state)
+julia> function worstvalue(original_state)
 return utility_value 
-for successor_state
-do minimax(utility_state, bestvalue (initial_state)
+for  next_state
+do minimax(utility_state, bestvalue (original_state)
 return utility_state
 
-julia> function minimax2  (A, B, node1, depth, maxplayrpotential )
-if node1 = leafnode
-return node1
+julia> function minimax2  (A, B, branchnode1,  branchnodedepth, maxplayrpotential )
+if  branchnode1 =  branchleafnode
+return  branchnode1
 
 julia> if maxplayrpotential:
 highest_value = 6
 
 for childnode
-value = minimax(node1, branchnodedepth + 1, A, B)
+value = minimax(branchnode1, branchnodedepth + 1, A, B)
 highest_value = bestvalue(highest_value, value)
-B = minvalue(B, highest_value)
+B = worstvalue(B, highest_value)
 if B <= A
 return highest_value
 
