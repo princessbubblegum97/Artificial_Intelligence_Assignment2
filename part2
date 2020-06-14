@@ -12,17 +12,17 @@ julia>total_moves_of_all_players = 800
 
 julia>searchtree= 900 ^ 800
 
-julia> initial_state = 7
+julia> ORIGINAL_state = 7
 
 julia>bestvalue = 65
 
-julia> successor_state = 8
+julia> C_state = 8
 
 julia>utility_value = 50
 
 julia> function minimax(original_state) 
 
-return  next_state
+return  NEXT_state
 
 julia> function bestvalue(original_state)
 return utility_value
