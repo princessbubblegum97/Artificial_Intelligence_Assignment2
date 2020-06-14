@@ -1,0 +1,56 @@
+julia> str = ("snakes and ladders")
+
+julia> player1  = "Dio"
+julia> player2  = "Cassie"
+julia> player3  = "Frannie"
+
+julia>  diceroll = ['1', '2', '3', '4', '5', '6']
+
+julia> branching_factor = 900
+
+julia>total_moves_of_all_players = 800
+
+julia>searchtree= 900 ^ 800
+
+julia> initial_state = 7
+
+julia>bestvalue = 65
+
+julia> successor_state = 8
+
+julia>utility_value = 50
+
+julia> function minimax(initial_state) 
+
+return  successor_state
+
+julia> function bestvalue(initial_state)
+return utility_value
+if terminal_test 
+then return utility_state
+
+julia> function worstvalue(initial_state)
+return utility_value 
+for successor_state
+do minmax(utility_state, bestvalue (initial_state)
+return utility_state
+
+julia> function minimax2  (A, B, node1, depth,  maxplayrpotential )
+if node1 = leafnode
+return node1
+
+julia> if maxplayrpotential:
+highest_value = 6
+
+for childnode
+value = minimax(node1, depth + 1, A, B)
+highest_value = bestvalue(highest_value, value)
+B= minvalue(B, highest_value)
+if B <= A
+return highest_value
+
+julia> minimax(1, 6)
+
+
+//https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-4-alpha-beta-pruning/
+//MyChapter5 Adversarial Search and Game-Playing v
